@@ -2,7 +2,7 @@
 Description=Watch for USB mount
 
 [Path]
-PathExists=/media/USER/MYBACKUP   # IMPORTANT: Change to your user
+PathExists=/media/USER/MYBACKUP   # IMPORTANT: Change to path of your USB drive.
 
 [Install]
 WantedBy=default.target
