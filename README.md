@@ -51,17 +51,11 @@ nano usb_sync.py
 Look for:
 
 ```python
-SOURCE_DIR = "/home/YOURUSER/YourFolder"
-USB_MOUNT = "/media/YOURUSER/YOURUSBLABEL"
+SOURCE = "/home/YOURUSER/YourFolder"
+USB_LABEL = "/media/YOURUSER/YOURUSBLABEL"
 ```
 
 Edit these paths to your real ones.  
-Example:
-
-```python
-SOURCE_DIR = "/home/joseph/Documents/SyncFolder"
-USB_MOUNT = "/media/joseph/BACKUPUSB"
-```
 
 Save & exit Nano:  
 **Ctrl + O**, Enter, **Ctrl + X**
@@ -94,10 +88,6 @@ PathModified=/home/YOURUSER/YourFolder
 ```
 
 Change it to the same folder you set in the Python script:
-
-```
-PathModified=/home/joseph/Documents/SyncFolder
-```
 
 Save & exit Nano.
 
