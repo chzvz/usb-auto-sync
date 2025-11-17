@@ -23,3 +23,146 @@ If your USB is not EXT4, you can format it with:
 ```
 sudo mkfs.ext4 /dev/sdX1
 # Replace /dev/sdX1 with your USB device. This will erase all data on the drive.
+```
+# 📦 Installation
+
+# 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/chzvz/usb-auto-sync.git
+cd usb-auto-sync
+```
+
+---
+
+# 2️⃣ Edit the Python script (important!)
+
+You must set:
+
+- the folder you want to sync **from**
+- the USB mount point (usually `/media/YOURUSER/USBLABEL`)
+
+Open the file:
+
+```bash
+nano usb_sync.py
+```
+
+Look for:
+
+```python
+SOURCE_DIR = "/home/YOURUSER/YourFolder"
+USB_MOUNT = "/media/YOURUSER/YOURUSBLABEL"
+```
+
+Edit these paths to your real ones.  
+Example:
+
+```python
+SOURCE_DIR = "/home/joseph/Documents/SyncFolder"
+USB_MOUNT = "/media/joseph/BACKUPUSB"
+```
+
+Save & exit Nano:  
+**Ctrl + O**, Enter, **Ctrl + X**
+
+---
+
+# 3️⃣ Copy the script into place
+
+```bash
+sudo cp usb_sync.py /usr/local/bin/usb_sync.py
+sudo chmod +x /usr/local/bin/usb_sync.py
+```
+
+---
+
+# 4️⃣ Edit the systemd path file
+
+This tells systemd which directory to watch.
+
+Open:
+
+```bash
+nano systemd/usb-sync.path
+```
+
+Find:
+
+```
+PathModified=/home/YOURUSER/YourFolder
+```
+
+Change it to the same folder you set in the Python script:
+
+```
+PathModified=/home/joseph/Documents/SyncFolder
+```
+
+Save & exit Nano.
+
+---
+
+# 5️⃣ Install the systemd units
+
+```bash
+mkdir -p ~/.config/systemd/user/
+cp systemd/usb-sync.service ~/.config/systemd/user/
+cp systemd/usb-sync.path ~/.config/systemd/user/
+```
+
+---
+
+# 6️⃣ Reload & enable systemd
+
+```bash
+systemctl --user daemon-reload
+systemctl --user enable --now usb-sync.path
+```
+
+Syncing will now automatically run whenever:
+
+- your source folder changes  
+- the USB is plugged in and mounted  
+
+---
+
+# 🟢 Verify
+
+```bash
+systemctl --user status usb-sync.path
+systemctl --user status usb-sync.service
+```
+
+Both should show **active**.
+
+---
+
+# 🗑️ Uninstallation
+
+## 1️⃣ Stop the systemd units
+
+```bash
+systemctl --user disable --now usb-sync.path
+systemctl --user disable --now usb-sync.service
+```
+
+## 2️⃣ Remove systemd files
+
+```bash
+rm ~/.config/systemd/user/usb-sync.service
+rm ~/.config/systemd/user/usb-sync.path
+systemctl --user daemon-reload
+```
+
+## 3️⃣ Remove the Python script
+
+```bash
+sudo rm /usr/local/bin/usb_sync.py
+```
+
+## 4️⃣ Optional: remove logs
+
+```bash
+rm -rf ~/usb_sync_logs/
+```
