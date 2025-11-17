@@ -1,0 +1,8 @@
+[Unit]
+Description=Watch for USB mount
+
+[Path]
+PathExists=/media/joseph/MYBACKUP
+
+[Install]
+WantedBy=default.target
