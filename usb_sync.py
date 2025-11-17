@@ -4,7 +4,7 @@ import os
 import subprocess
 import sys
 
-SOURCE = "/mnt/4020D7E120D7DBCA/30DaysOfPython"
+SOURCE = "/home/USER/projectfolder"  # IMPORTANT: PATH TO FOLDER YOU ARE SYNCING GOES HERE
 USB_LABEL = "MYBACKUP"
 SYNC_INTERVAL = 5  # seconds
 
@@ -30,7 +30,7 @@ def main():
             print("USB removed. Exiting.")
             sys.exit(0)
 
-        dest = os.path.join(mount, "30DaysOfPythonBackup")
+        dest = os.path.join(mount, "projectfolder")  # IMPORTANT: NAME OF FOLDER YOU ARE SYNCING
         os.makedirs(dest, exist_ok=True)
 
         print("Syncing...")
