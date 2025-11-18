@@ -50,8 +50,8 @@ nano usb_sync.py
 Look for:
 
 ```
-SOURCE = "/home/YOURUSER/YourFolder"
-USB_LABEL = "/media/YOURUSER/YOURUSBLABEL"
+SOURCE = "/home/YOURUSER/projectfolder"
+dest = os.path.join(mount, "projectfolder")
 ```
 
 Edit these paths to your real ones.  
