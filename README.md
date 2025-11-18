@@ -20,20 +20,19 @@ lsblk -f
 
 # Format if needed (erases all data from drive!)
 
-- -L sets label to 'MYBACKUP'
-
 Format to EXT4:
 ```
 sudo umount /dev/sda1
 sudo mkfs.ext4 -L MYBACKUP /dev/sda1
-### Replace sda1 with name of your USB, which you can find with lsblk.
+# Replace sda1 with name of your USB, which you can find with lsblk.
 ```
 Format to NTFS:
 ```
 sudo umount /dev/sda1
 sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1
-### Replace sda1 with name of your USB, which you can find with lsblk.
+# Replace sda1 with name of your USB, which you can find with lsblk.
 ```
+- -L sets label to 'MYBACKUP'
 
 # Installation
 
