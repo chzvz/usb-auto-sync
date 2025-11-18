@@ -14,13 +14,13 @@ To find USB NAME and FSTYPE:
 ```
 lsblk -f
 ```
-Format to EXT4:
+Format to EXT4 (best on linux):
 ```
 sudo umount /dev/sda1
 sudo mkfs.ext4 -L MYBACKUP /dev/sda1
 # Replace sda1 with name of your USB, which you found with lsblk.
 ```
-Format to NTFS:
+Format to NTFS (better if you need to access files on windows machine:
 ```
 sudo umount /dev/sda1
 sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1
