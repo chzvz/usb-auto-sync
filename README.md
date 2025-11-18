@@ -58,9 +58,10 @@ sudo chmod +x /usr/local/bin/usb_sync.py
 ```
 nano systemd/usb-sync.path
 ```
-Edit this path to match the path of your USB drive.
+Edit these paths to match the path of your USB drive.
 ```
 PathExists=/media/USER/MYBACKUP
+PathChanged=/media/USER/MYBACKUP
 ```
 ---
 
