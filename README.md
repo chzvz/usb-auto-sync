@@ -36,8 +36,6 @@ cd usb-auto-sync
 
 **2. Edit the Python script**
 
-Open the file:
-
 ```
 nano usb_sync.py
 ```
@@ -49,30 +47,24 @@ SOURCE = "/home/YOURUSER/projectfolder"
 dest = os.path.join(mount, "projectfolder")
 ```
 
-**3. Copy the script into place**
+**3. Copy script into place**
 
 ```
 sudo cp usb_sync.py /usr/local/bin/usb_sync.py
 sudo chmod +x /usr/local/bin/usb_sync.py
 ```
 
-**4. Edit the systemd path file**
-
-This tells systemd the USB path to watch for.
-
-Open:
+**4. Edit systemd path file**
 
 ```
 nano systemd/usb-sync.path
 ```
 
-Find:
+Edit this path to match the path of your USB drive.
 
 ```
-PathModified=/home/YOURUSER/projectfolder
+PathExists=/media/USER/MYBACKUP
 ```
-
-Change it to the same folder you set in the Python script:
 
 **5. Install the systemd units**
 
