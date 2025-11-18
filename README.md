@@ -20,7 +20,7 @@ lsblk -f
 
 # Format if needed (erases all data from drive!)
 
-- sets label to 'MYBACKUP'
+- -L sets label to 'MYBACKUP'
 
 Format to EXT4:
 ```
