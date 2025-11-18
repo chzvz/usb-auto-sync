@@ -24,6 +24,7 @@ Format to NTFS (better if you need to access files on windows machine):
 sudo umount /dev/sda1    # Replace sda1 with name of your USB
 sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1    # -L sets label to 'MYBACKUP'
 ```
+---
 
 # Installation
 
@@ -40,13 +41,12 @@ cd usb-auto-sync
 ```
 nano usb_sync.py
 ```
-
 Edit these paths to match the folder you are backing up:
-
 ```
 SOURCE = "/home/YOURUSER/projectfolder"
 dest = os.path.join(mount, "projectfolder")
 ```
+---
 
 **3. Copy script into place**
 
@@ -54,18 +54,18 @@ dest = os.path.join(mount, "projectfolder")
 sudo cp usb_sync.py /usr/local/bin/usb_sync.py
 sudo chmod +x /usr/local/bin/usb_sync.py
 ```
+---
 
 **4. Edit systemd path file**
 
 ```
 nano systemd/usb-sync.path
 ```
-
 Edit this path to match the path of your USB drive.
-
 ```
 PathExists=/media/USER/MYBACKUP
 ```
+---
 
 **5. Install the systemd units**
 
@@ -74,6 +74,7 @@ mkdir -p ~/.config/systemd/user/
 cp systemd/usb-sync.service ~/.config/systemd/user/
 cp systemd/usb-sync.path ~/.config/systemd/user/
 ```
+---
 
 **6. Reload & enable systemd**
 
@@ -85,7 +86,9 @@ systemctl --user enable --now usb-sync.path
 Syncing will now automatically run whenever:
 
 - your source folder changes  
-- the USB is plugged in and mounted  
+- the USB is plugged in and mounted
+
+---
 
 **Verify**
 
