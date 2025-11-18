@@ -2,7 +2,8 @@
 Description=Watch for USB mount
 
 [Path]
-PathExists=/media/USER/MYBACKUP   # IMPORTANT: CHANGE TO PATH OF YOUR USB DRIVE.
+PathExists=/media/USER/MYBACKUP
+PathChanged=/media/USER/MYBACKUP    # IMPORTANT: CHANGE TO PATH OF YOUR USB DRIVE.
 
 [Install]
 WantedBy=default.target
