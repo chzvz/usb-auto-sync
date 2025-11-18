@@ -36,11 +36,6 @@ cd usb-auto-sync
 
 **2. Edit the Python script**
 
-You must set:
-
-- the folder you want to sync **from**
-- the USB mount point (usually `/media/YOURUSER/USBLABEL`)
-
 Open the file:
 
 ```
@@ -54,7 +49,7 @@ SOURCE = "/home/YOURUSER/projectfolder"
 dest = os.path.join(mount, "projectfolder")
 ```
 
-Edit these paths to your real ones.  
+Edit these paths to your real ones. Use the folder you are backing up. 
 Ctrl + O, Enter, Ctrl + X
 
 **3. Copy the script into place**
