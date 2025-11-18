@@ -47,6 +47,7 @@ Look for:
 ```
 SOURCE = "/home/YOURUSER/projectfolder"
 dest = os.path.join(mount, "projectfolder")
+
 # Edit these paths to match the folder you are backing up.
 ```
 
