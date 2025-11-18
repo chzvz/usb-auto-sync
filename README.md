@@ -6,8 +6,6 @@ should work on most Linux systems with systemd and automounting.
 
 **NOTE: Your USB must be formatted to EXT4 or NTFS.**
 
----
-
 # Format if needed (erases all data from drive!)
 
 To find USB NAME and FSTYPE:
