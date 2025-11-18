@@ -18,19 +18,17 @@ Find USB NAME and FSTYPE:
 lsblk -f
 ```
 If FSTYPE is EXT4 or NTFS, you can skip formatting. 
+---
 Replace sda1 with the NAME of your USB. If your USB is sda1, copy and paste.
-
-Unmount:
-```
-sudo umount /dev/sda1
-```
 Format to ext4:
 ```
+sudo umount /dev/sda1
 sudo mkfs.ext4 -L MYBACKUP /dev/sda1
 This will erase all data on the drive and label it 'MYBACKUP'.
 ```
 Format to NTFS:
 ```
+sudo umount /dev/sda1
 sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1
 # Replace /dev/sda1 with your USB device. This will erase all data on the drive and label it 'MYBACKUP'.
 ```
