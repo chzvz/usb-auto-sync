@@ -26,7 +26,7 @@ sudo umount /dev/sda1
 sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1
 # Replace sda1 with name of your USB, which you found with lsblk.
 ```
-**-L sets label to 'MYBACKUP'**
+*-L sets label to 'MYBACKUP'*
 
 # Installation
 
