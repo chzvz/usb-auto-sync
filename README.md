@@ -3,7 +3,7 @@
 A simple, reliable tool that automatically syncs a folder on your computer
 to a USB drive whenever the drive is plugged in.
 
-- NOTE: Your USB must be formatted to EXT4 or NTFS. EXT4 works best on linux, but NTFS is better if you need to access the files on windows as well.
+**NOTE: Your USB must be formatted to EXT4 or NTFS.**
 
 *Designed for Debian/KDE but should work on most Linux systems with systemd and automounting.*
 
