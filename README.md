@@ -13,23 +13,24 @@ Designed for Debian/KDE but should work on most Linux systems with systemd and a
 
 *NOTE: Your USB must be formatted to EXT4 or NTFS. EXT4 works best on linux, but NTFS is better if you need to access the files on windows as well.*
 
-Find USB NAME and FSTYPE:
+To find USB FSTYPE:
 ```
 lsblk -f
 ```
-If FSTYPE is EXT4 or NTFS, you can skip formatting. Keep note of your USB NAME, replace sda1 with your drive if needed when copy and pasting.
 
-# Format if needed (Erases all data from drive)
-
-Format to ext4 (Sets label to 'MYBACKUP'):
+# Format if needed (erases all data from drive!)
+- sets label to 'MYBACKUP'
+Format to EXT4:
 ```
 sudo umount /dev/sda1
 sudo mkfs.ext4 -L MYBACKUP /dev/sda1
+### Replace sda1 with name of your USB, which you can find with lsblk.
 ```
-Format to NTFS (Sets label to 'MYBACKUP'):
+Format to NTFS:
 ```
 sudo umount /dev/sda1
 sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1
+### Replace sda1 with name of your USB, which you can find with lsblk.
 ```
 
 # Installation
