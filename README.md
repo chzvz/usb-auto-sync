@@ -49,8 +49,6 @@ SOURCE = "/home/YOURUSER/projectfolder"
 dest = os.path.join(mount, "projectfolder")
 ```
 
-
-
 **3. Copy the script into place**
 
 ```
@@ -60,7 +58,7 @@ sudo chmod +x /usr/local/bin/usb_sync.py
 
 **4. Edit the systemd path file**
 
-This tells systemd which directory to watch.
+This tells systemd the USB path to watch for.
 
 Open:
 
@@ -71,7 +69,7 @@ nano systemd/usb-sync.path
 Find:
 
 ```
-PathModified=/home/YOURUSER/YourFolder
+PathModified=/home/YOURUSER/projectfolder
 ```
 
 Change it to the same folder you set in the Python script:
