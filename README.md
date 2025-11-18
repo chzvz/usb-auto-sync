@@ -9,24 +9,24 @@ to a USB drive whenever the drive is plugged in. Uses:
 
 Designed for Debian/KDE but should work on most Linux systems with systemd and automounting.
 
-# Format
+# Format if needed (Erases all data from drive)
 
 **Your USB must be formatted to EXT4 or NTFS. EXT4 works best on linux, but NTFS is better if you need to access the files on windows as well.**
 
 Find USB name:
 ```
 lsblk
-# Under NAME find the USB drive you want to reformat, should be something like sda1. The number is important.
 ```
+Under NAME find the USB drive you want to reformat, should be something like sda1. If it is not sda1, enter the correct name for the folowing code.
+
 Unmount:
 ```
 sudo umount /dev/sda1
-# Replace /dev/sda1 with your USB device.
 ```
 Format to ext4:
 ```
 sudo mkfs.ext4 -L MYBACKUP /dev/sda1
-# Replace /dev/sda1 with your USB device. This will erase all data on the drive and label it 'MYBACKUP'.
+This will erase all data on the drive and label it 'MYBACKUP'.
 ```
 Format to NTFS:
 ```
