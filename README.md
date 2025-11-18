@@ -6,7 +6,7 @@ should work on most Linux systems with systemd and automounting.
 
 **NOTE: Your USB must be formatted to EXT4 or NTFS.**
 
-# Format if needed (erases all data from drive!)
+# Format if needed (erases all data from USB!)
 
 To find USB NAME and FSTYPE:
 ```
@@ -71,12 +71,6 @@ PathChanged=/media/USER/MYBACKUP
 mkdir -p ~/.config/systemd/user/
 cp systemd/usb-sync.service ~/.config/systemd/user/
 cp systemd/usb-sync.path ~/.config/systemd/user/
-```
----
-
-**6. Reload & enable systemd**
-
-```
 systemctl --user daemon-reload
 systemctl --user enable --now usb-sync.path
 ```
