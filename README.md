@@ -11,22 +11,17 @@ Designed for Debian/KDE but should work on most Linux systems with systemd and a
 
 ---
 
-## 🚨 Important Note: USB Filesystem
-
 **Your USB must be formatted to EXT4.**
-
-- EXT4 is reliable, fast, and preserves file permissions.  
-- FAT32 has a 4 GB max file size and no permissions.  
-- NTFS works but is slower and less reliable on Linux.  
+- NTFS works but is slower and less reliable
 
 If your USB is not EXT4, you can format it with:
 ```
 sudo mkfs.ext4 /dev/sdX1
 # Replace /dev/sdX1 with your USB device. This will erase all data on the drive.
 ```
-# 📦 Installation
+# Installation
 
-# 1️⃣ Clone the repository
+# 1. Clone the repository
 
 ```bash
 git clone https://github.com/chzvz/usb-auto-sync.git
@@ -35,7 +30,7 @@ cd usb-auto-sync
 
 ---
 
-# 2️⃣ Edit the Python script (important!)
+# 2. Edit the Python script (important!)
 
 You must set:
 
@@ -62,7 +57,7 @@ Save & exit Nano:
 
 ---
 
-# 3️⃣ Copy the script into place
+# 3. Copy the script into place
 
 ```bash
 sudo cp usb_sync.py /usr/local/bin/usb_sync.py
@@ -71,7 +66,7 @@ sudo chmod +x /usr/local/bin/usb_sync.py
 
 ---
 
-# 4️⃣ Edit the systemd path file
+# 4. Edit the systemd path file
 
 This tells systemd which directory to watch.
 
@@ -93,7 +88,7 @@ Save & exit Nano.
 
 ---
 
-# 5️⃣ Install the systemd units
+# 5. Install the systemd units
 
 ```bash
 mkdir -p ~/.config/systemd/user/
@@ -103,7 +98,7 @@ cp systemd/usb-sync.path ~/.config/systemd/user/
 
 ---
 
-# 6️⃣ Reload & enable systemd
+# 6. Reload & enable systemd
 
 ```bash
 systemctl --user daemon-reload
@@ -117,7 +112,7 @@ Syncing will now automatically run whenever:
 
 ---
 
-# 🟢 Verify
+# Verify
 
 ```bash
 systemctl --user status usb-sync.path
@@ -128,30 +123,18 @@ Both should show **active**.
 
 ---
 
-# 🗑️ Uninstallation
-
-## 1️⃣ Stop the systemd units
+# Uninstallation
 
 ```bash
 systemctl --user disable --now usb-sync.path
 systemctl --user disable --now usb-sync.service
-```
-
-## 2️⃣ Remove systemd files
-
-```bash
 rm ~/.config/systemd/user/usb-sync.service
 rm ~/.config/systemd/user/usb-sync.path
 systemctl --user daemon-reload
-```
-
-## 3️⃣ Remove the Python script
-
-```bash
 sudo rm /usr/local/bin/usb_sync.py
 ```
 
-## 4️⃣ Optional: remove logs
+## Optional: remove logs
 
 ```bash
 rm -rf ~/usb_sync_logs/
