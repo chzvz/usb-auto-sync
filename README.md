@@ -11,14 +11,29 @@ Designed for Debian/KDE but should work on most Linux systems with systemd and a
 
 ---
 
-**Your USB must be formatted to EXT4.**
-- NTFS works but is slower and less reliable
+**Your USB must be formatted to EXT4 or NTFS. EXT4 works best on linux, but NTFS is better if you need to access the files on windows as well.**
 
-If your USB is not EXT4, you can format it with:
+Find USB name:
 ```
-sudo mkfs.ext4 /dev/sda1
-# Replace /dev/sda1 with your USB device. This will erase all data on the drive.
+lsblk
+# Under NAME find the USB drive you want to reformat, should be something like sda1. The number is important.
 ```
+Unmount:
+```
+sudo umount /dev/sda1
+# Replace /dev/sda1 with your USB device.
+```
+Format to ext4:
+```
+sudo mkfs.ext4 -L MYBACKUP /dev/sda1
+# Replace /dev/sda1 with your USB device. This will erase all data on the drive and label it 'MYBACKUP'.
+```
+Format to NTFS:
+```
+sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1
+# Replace /dev/sda1 with your USB device. This will erase all data on the drive and label it 'MYBACKUP'.
+```
+
 # Installation
 
 # 1. Clone the repository
