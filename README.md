@@ -1,34 +1,29 @@
 # USB Auto Sync for Linux
 
 A simple, reliable tool that automatically syncs a folder on your computer
-to a USB drive whenever the drive is plugged in. Uses:
-
-- Python
-- rsync
-- systemd (user services)
+to a USB drive whenever the drive is plugged in.
 
 - NOTE: Your USB must be formatted to EXT4 or NTFS. EXT4 works best on linux, but NTFS is better if you need to access the files on windows as well.
+
 *Designed for Debian/KDE but should work on most Linux systems with systemd and automounting.*
 ---
 
-To find USB FSTYPE:
+# Format if needed (erases all data from drive!)
+To find USB NAME and FSTYPE:
 ```
 lsblk -f
 ```
-
-# Format if needed (erases all data from drive!)
-
 Format to EXT4:
 ```
 sudo umount /dev/sda1
 sudo mkfs.ext4 -L MYBACKUP /dev/sda1
-# Replace sda1 with name of your USB, which you can find with lsblk.
+# Replace sda1 with name of your USB, which you found with lsblk.
 ```
 Format to NTFS:
 ```
 sudo umount /dev/sda1
 sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1
-# Replace sda1 with name of your USB, which you can find with lsblk.
+# Replace sda1 with name of your USB, which you found with lsblk.
 ```
 - -L sets label to 'MYBACKUP'
 
