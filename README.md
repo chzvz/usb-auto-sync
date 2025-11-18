@@ -9,6 +9,7 @@ should work on most Linux systems with systemd and automounting.
 ---
 
 # Format if needed (erases all data from drive!)
+
 To find USB NAME and FSTYPE:
 ```
 lsblk -f
