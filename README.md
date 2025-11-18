@@ -1,7 +1,7 @@
 # USB Auto Sync for Linux
 
 A simple, reliable tool that automatically syncs a folder on your computer
-to a USB drive whenever the drive is plugged in.
+to a USB drive whenever the drive is plugged in using python, rsync and systemd.
 
 **NOTE: Your USB must be formatted to EXT4 or NTFS.**
 
