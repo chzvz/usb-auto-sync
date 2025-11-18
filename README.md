@@ -16,12 +16,12 @@ lsblk -f
 ```
 Format to EXT4 (best on linux):
 ```
-sudo umount /dev/sda1    # Replace sda1 with name of your USB found with lsblk
+sudo umount /dev/sda1    # Replace sda1 with name of your USB
 sudo mkfs.ext4 -L MYBACKUP /dev/sda1    # -L sets label to 'MYBACKUP'
 ```
 Format to NTFS (better if you need to access files on windows machine:
 ```
-sudo umount /dev/sda1    # Replace sda1 with name of your USB found with lsblk
+sudo umount /dev/sda1    # Replace sda1 with name of your USB
 sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1    # -L sets label to 'MYBACKUP'
 ```
 
