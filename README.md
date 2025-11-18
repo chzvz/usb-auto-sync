@@ -1,8 +1,10 @@
 # USB Auto Sync for Linux
 
 A simple, reliable tool that automatically syncs a folder on your computer
-to a USB drive whenever the drive is plugged in. Uses Python, systemd and rsync.
-Designed for Debian/KDE but should work on most Linux systems with systemd and automounting.
+to a USB drive whenever the drive is plugged in. Uses sytemd to trigger Python
+scipt when USB appears. Python script uses rsync to sync files.
+Designed for Debian/KDE but should work on most Linux systems with systemd, rsync, 
+and Python.
 
 **NOTE: Your USB must be formatted to EXT4 or NTFS.**
 
