@@ -20,7 +20,7 @@ def get_mount_point(label):
 
 def rsync_folder(src, dest):
     subprocess.run([
-        "rsync", "-a", "--delete", src + "/", dest + "/"
+        "rsync", "-a", src + "/", dest + "/"
     ])
 
 def main():
