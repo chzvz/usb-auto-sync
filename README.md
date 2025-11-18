@@ -19,7 +19,9 @@ lsblk -f
 ```
 
 # Format if needed (erases all data from drive!)
-- sets label to 'MYBACKUP'
+
+- sets label to 'MYBACKUP' -
+
 Format to EXT4:
 ```
 sudo umount /dev/sda1
