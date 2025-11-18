@@ -13,11 +13,12 @@ Designed for Debian/KDE but should work on most Linux systems with systemd and a
 
 **Your USB must be formatted to EXT4 or NTFS. EXT4 works best on linux, but NTFS is better if you need to access the files on windows as well.**
 
-Find USB name:
+Find USB NAME and FSTYPE:
 ```
-lsblk
+lsblk -f
 ```
-Under NAME find the USB drive you want to reformat, should be something like sda1. If it is not sda1, enter the correct name for the folowing code.
+If FSTYPE is EXT4 or NTFS, you can skip formatting. 
+Replace sda1 with the NAME of your USB. If your USB is sda1, copy and paste.
 
 Unmount:
 ```
