@@ -104,7 +104,6 @@ rm ~/.config/systemd/user/usb-sync.path
 systemctl --user daemon-reload
 sudo rm /usr/local/bin/usb_sync.py
 ```
----
 
 **Optional: remove logs**
 
