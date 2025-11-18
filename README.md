@@ -2,7 +2,7 @@
 
 A simple, reliable tool that automatically syncs a folder on your computer
 to a USB drive whenever the drive is plugged in. Uses sytemd to trigger Python
-scipt when USB appears. Python script uses rsync to sync files.
+scipt when USB appears. Python script uses rsync to sync files every 3 seconds.
 Designed for Debian/KDE but should work on most Linux systems with systemd, rsync, 
 and Python.
 
