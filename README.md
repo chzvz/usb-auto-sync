@@ -85,8 +85,6 @@ Syncing will now automatically run whenever:
 - your source folder changes  
 - the USB is plugged in and mounted
 
----
-
 **Verify**
 
 ```
@@ -106,6 +104,7 @@ rm ~/.config/systemd/user/usb-sync.path
 systemctl --user daemon-reload
 sudo rm /usr/local/bin/usb_sync.py
 ```
+---
 
 **Optional: remove logs**
 
