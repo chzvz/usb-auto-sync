@@ -6,7 +6,7 @@ import sys
 
 SOURCE = "/home/USER/projectfolder"  # IMPORTANT: PATH TO FOLDER YOU ARE SYNCING GOES HERE
 USB_LABEL = "MYBACKUP"
-SYNC_INTERVAL = 3  # seconds
+SYNC_INTERVAL = 3  # Lower values sync faster but use more resources
 
 def get_mount_point(label):
     result = subprocess.run(
