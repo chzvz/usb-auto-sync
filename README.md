@@ -9,7 +9,7 @@ to a USB drive whenever the drive is plugged in. Uses:
 
 Designed for Debian/KDE but should work on most Linux systems with systemd and automounting.
 
-# Format if needed (Erases all data from drive)
+
 
 **Your USB must be formatted to EXT4 or NTFS. EXT4 works best on linux, but NTFS is better if you need to access the files on windows as well.**
 
@@ -17,20 +17,19 @@ Find USB NAME and FSTYPE:
 ```
 lsblk -f
 ```
-If FSTYPE is EXT4 or NTFS, you can skip formatting. 
----
-Replace sda1 with the NAME of your USB. If your USB is sda1, copy and paste.
-Format to ext4:
+If FSTYPE is EXT4 or NTFS, you can skip formatting. Keep note of your USB NAME, replace sda1 with your drive if needed when copy and pasting.
+
+# Format if needed (Erases all data from drive)
+
+Format to ext4 (Sets label to 'MYBACKUP'):
 ```
 sudo umount /dev/sda1
 sudo mkfs.ext4 -L MYBACKUP /dev/sda1
-This will erase all data on the drive and label it 'MYBACKUP'.
 ```
-Format to NTFS:
+Format to NTFS (Sets label to 'MYBACKUP'):
 ```
 sudo umount /dev/sda1
 sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1
-# Replace /dev/sda1 with your USB device. This will erase all data on the drive and label it 'MYBACKUP'.
 ```
 
 # Installation
