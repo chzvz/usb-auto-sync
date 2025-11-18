@@ -6,7 +6,7 @@ scipt whenever the USB appears. Python script uses rsync to sync files every 3 s
 Designed for Debian/KDE but should work on most Linux systems with systemd, rsync, 
 and Python.
 
-**NOTE: Your USB must be formatted to EXT4 or NTFS.**
+**Your USB must be formatted to EXT4 or NTFS.**
 
 **Format if needed (erases all data from USB!)**
 ---
