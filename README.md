@@ -33,6 +33,7 @@ sudo mkfs.ntfs -f -L MYBACKUP /dev/sda1    # -L sets label to 'MYBACKUP'
 git clone https://github.com/chzvz/usb-auto-sync.git
 cd usb-auto-sync
 ```
+---
 
 **2. Edit the Python script**
 
