@@ -2,5 +2,5 @@
 Description=USB Auto Sync Service
 
 [Service]
-Type=simple
+Type=oneshot
 ExecStart=/usr/local/bin/usb_sync.py
