@@ -11,7 +11,7 @@ Designed for Debian/KDE but should work on most Linux systems with systemd and a
 
 
 
-**Your USB must be formatted to EXT4 or NTFS. EXT4 works best on linux, but NTFS is better if you need to access the files on windows as well.**
+*Your USB must be formatted to EXT4 or NTFS. EXT4 works best on linux, but NTFS is better if you need to access the files on windows as well.*
 
 Find USB NAME and FSTYPE:
 ```
