@@ -79,7 +79,6 @@ cp systemd/usb-sync.path ~/.config/systemd/user/
 systemctl --user daemon-reload
 systemctl --user enable --now usb-sync.path
 ```
----
 
 Syncing will now automatically run whenever:
 
