@@ -8,9 +8,8 @@ and Python.
 
 **USB must be formatted to EXT4 or NTFS.**
 
-To find USB NAME and FSTYPE:
 ```
-lsblk -f
+lsblk -f    # Find your USB NAME and FSTYPE
 ```
 
 **Format if needed (erases all data from USB!)**
