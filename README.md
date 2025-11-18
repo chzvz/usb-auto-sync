@@ -7,6 +7,7 @@ Designed for Debian/KDE but should work on most Linux systems with systemd, rsyn
 and Python.
 
 **USB must be formatted to EXT4 or NTFS.**
+
 To find USB NAME and FSTYPE:
 ```
 lsblk -f
