@@ -82,8 +82,6 @@ PathModified=/home/YOURUSER/YourFolder
 
 Change it to the same folder you set in the Python script:
 
-Save & exit Nano.
-
 **5. Install the systemd units**
 
 ```
