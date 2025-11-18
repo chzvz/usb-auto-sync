@@ -9,7 +9,6 @@ to a USB drive whenever the drive is plugged in. Uses:
 
 Designed for Debian/KDE but should work on most Linux systems with systemd and automounting.
 
----
 # Format
 
 **Your USB must be formatted to EXT4 or NTFS. EXT4 works best on linux, but NTFS is better if you need to access the files on windows as well.**
@@ -44,8 +43,6 @@ git clone https://github.com/chzvz/usb-auto-sync.git
 cd usb-auto-sync
 ```
 
----
-
 # 2. Edit the Python script (important!)
 
 You must set:
@@ -71,16 +68,12 @@ Edit these paths to your real ones.
 Save & exit Nano:  
 **Ctrl + O**, Enter, **Ctrl + X**
 
----
-
 # 3. Copy the script into place
 
 ```
 sudo cp usb_sync.py /usr/local/bin/usb_sync.py
 sudo chmod +x /usr/local/bin/usb_sync.py
 ```
-
----
 
 # 4. Edit the systemd path file
 
@@ -102,8 +95,6 @@ Change it to the same folder you set in the Python script:
 
 Save & exit Nano.
 
----
-
 # 5. Install the systemd units
 
 ```
@@ -111,8 +102,6 @@ mkdir -p ~/.config/systemd/user/
 cp systemd/usb-sync.service ~/.config/systemd/user/
 cp systemd/usb-sync.path ~/.config/systemd/user/
 ```
-
----
 
 # 6. Reload & enable systemd
 
@@ -126,8 +115,6 @@ Syncing will now automatically run whenever:
 - your source folder changes  
 - the USB is plugged in and mounted  
 
----
-
 # Verify
 
 ```
@@ -136,8 +123,6 @@ systemctl --user status usb-sync.service
 ```
 
 Both should show **active**.
-
----
 
 # Uninstallation
 
@@ -150,7 +135,7 @@ systemctl --user daemon-reload
 sudo rm /usr/local/bin/usb_sync.py
 ```
 
-## Optional: remove logs
+**Optional: remove logs**
 
 ```
 rm -rf ~/usb_sync_logs/
